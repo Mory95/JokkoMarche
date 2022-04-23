@@ -28,22 +28,58 @@ class _HomeState extends State<Home> {
     return SafeArea(
       child: Scaffold(
           extendBody: true,
-          appBar: AppBar(
-            leading: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.menu),
-              iconSize: 45,
-            ),
-            title: const Center(child: Text('Jokko Marche')),
-            actions: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.account_circle),
-                iconSize: 45,
-              ),
-            ],
-          ),
+          // appBar: AppBar(
+          //   // leading: IconButton(
+          //   //   onPressed: () {},
+          //   //   icon: const Icon(Icons.menu),
+          //   //   iconSize: 45,
+          //   // ),
+          //   title: const Center(child: Text('Jokko Marche')),
+          //   actions: [
+          //     IconButton(
+          //       onPressed: () {},
+          //       icon: const Icon(Icons.account_circle),
+          //       iconSize: 45,
+          //     ),
+          //   ],
+          // ),
           bottomNavigationBar: const BottonBar(),
+          // drawer: Drawer(
+          //   backgroundColor: Colors.grey.shade300,
+          //   child: Padding(
+          //         padding: const EdgeInsets.only(top: 38.0),
+          //         child: ListView(
+          //           children: [
+          //             UserAccountsDrawerHeader(
+          //               accountName: const Text('Textemail@gmail.com'),
+          //               currentAccountPicture: GestureDetector(
+          //                 child:const CircleAvatar(
+          //                   radius: 60.0,
+          //                   backgroundColor: Colors.white,
+          //                   backgroundImage: AssetImage(
+          //                           'assets/images/home.png'),
+          //                 ),
+          //               ),
+          //               decoration:const BoxDecoration(color: Colors.redAccent),
+          //               accountEmail: null,
+          //             ),
+          //             const ListTile(
+          //               leading: Icon(
+          //                 Icons.search_rounded,
+          //                 color: Colors.grey,
+          //                 size: 35.0,
+          //               ),
+          //               title: Text(
+          //                 'Recherche',
+          //                 style:
+          //                     TextStyle(fontSize: 25.0, color: Colors.black87),
+          //               ),
+          //             )
+
+          //           ],
+          //         ),
+          //   ),
+          //   ),
           body: CustomScrollView(
             slivers: [
               SliverAppBar(

@@ -1,6 +1,7 @@
+// ignore_for_file: file_names
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:jokko_marche/screens/components/bottomBar.dart';
 
 final List<String> imgList = [
   'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
@@ -54,7 +55,7 @@ class _ProductDetailsState extends State<ProductDetails> {
       appBar: AppBar(
         title: const Text('Detail'),
       ),
-      bottomNavigationBar: const BottonBar(),
+      // bottomNavigationBar: const BottonBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -136,94 +137,68 @@ class _ProductDetailsState extends State<ProductDetails> {
             ),
             Container(
               color: Colors.grey[200],
+              padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 5),
               child: Row(
                 children: [
-                  Expanded(
-                    flex: 3,
-                    child: Container(
-                      margin:
-                          const EdgeInsets.only(top: 10, left: 10, bottom: 10),
-                      // height: 50,
-                      child: const Text('Ensemble'),
-                    ),
-                  ),
-                  Container(
-                    color: Colors.blue,
-                    width: 150,
-                  ),
-                  Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.only(top: 10, bottom: 10),
-                      // height: 20,
-                      child: const Text('2500f'),
-                    ),
-                  ),
+                  const Text('Ensemble'),
+                  Expanded(child: Container()),
+                  const Text('2500 fcfa'),
                 ],
               ),
             ),
             Container(
-              height: 50,
               color: Colors.grey[350],
+              padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 2),
               child: Row(
                 children: [
-                  Expanded(
-                    flex: 2,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        padding:
-                            MaterialStateProperty.all(const EdgeInsets.all(2)),
-                        elevation: MaterialStateProperty.all(0),
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.transparent),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      elevation: MaterialStateProperty.all(0),
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.transparent),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        show = true;
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: show
+                            ? const Border(
+                                bottom: BorderSide(
+                                  color: Colors.black,
+                                ),
+                              )
+                            : const Border(bottom: BorderSide.none),
                       ),
-                      onPressed: () {
-                        setState(() {
-                          show = true;
-                        });
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: show
-                              ? const Border(
-                                  bottom: BorderSide(
-                                    color: Colors.black,
-                                  ),
-                                )
-                              : const Border(bottom: BorderSide.none),
-                        ),
-                        child: const Text('Description'),
-                      ),
+                      child: const Text('Description'),
                     ),
                   ),
-                  Container(
-                    width: 100,
-                  ),
-                  Expanded(
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        padding:
-                            MaterialStateProperty.all(const EdgeInsets.all(0)),
-                        elevation: MaterialStateProperty.all(0),
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.transparent),
+                  Expanded(child: Container()),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      elevation: MaterialStateProperty.all(0),
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.transparent),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        show = false;
+                      });
+                    },
+                    child: Container(
+                      // margin: EdgeInsets.only(right: 11),
+                      decoration: BoxDecoration(
+                        border: !show
+                            ? const Border(
+                                bottom: BorderSide(
+                                  color: Colors.black,
+                                ),
+                              )
+                            : const Border(bottom: BorderSide.none),
                       ),
-                      onPressed: () {
-                        setState(() {
-                          show = false;
-                        });
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: !show
-                              ? const Border(
-                                  bottom: BorderSide(
-                                    color: Colors.black,
-                                  ),
-                                )
-                              : const Border(bottom: BorderSide.none),
-                        ),
-                        child: const Text('Vendeur'),
-                      ),
+                      child: const Text('Vendeur'),
                     ),
                   ),
                 ],
